@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+/*********seteo css**********/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alata", sans-serif;
+  color: black;
+}
+
+/**********************grid************************/
+
+/*Armado de la cuadricula de grid*/
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 1fr 1fr 100px;
+  grid-template-areas:
+    "nav" "nav" "nav"
+    "main" "main" "main"
+    "section" "section" "section"
+    "footer" "footer" "footer";
+    height: 100vh;
+    /* width: 100vw; */
+    margin: 0;
+}
+
+/*etiquetas para asignarle cada etiqueta a los sectores de la plantilla*/
+
+header {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+section {
+  grid-area: section;
+}
+form {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+
+/***********************header**********************/
+
+
+
+header {
+  display: flex;
+}
+
+/*clase para ordenar los elementos dentro de la etiqueta nav*/
+
+.header__nav {
+  display: flex;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+}
+/*clase para ordenar los elementos de la lista. etiqueta UL*/
+.header__nav__ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+    
+  height: 100%;
+  
+}
+
+/*clase para manipular el estilo de la lista de menu, etiqueta LI*/
+.lista {
+    list-style: none;
+}
+/*clase para manipular los enlaces del menu, etiqueta A*/
+.enlace {
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+/*clase para manipular el logo*/
+.logo {
+  width: 20vw;
+  height: 30vh;
+  padding: 0.3rem;
+}
+
+/***********************MAIN***********************/
+
+.index__main {
+  color: blanchedalmond;
+  background-image: url(../img/portada.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 75vh;
+}
+
+.main__color__letra {
+  width: 50%;
+  font-size: 4.5rem;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke: 0.1px;
+  -webkit-text-stroke-color: rgba(248, 246, 246, 0.932);
+  margin-left: 20px;
+}
+
+.main__boton {
+  margin: 15vh 15vw;
+  padding: 2vh 5vw;
+  font-size: 20px;
+  color:white;
+  background-color: black;
+}
+/*********section********/
+.section__prod {
+  display: grid; 
+  justify-content: space-between;
+  background-color: black;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+}
+.section__div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  padding: 5px;
+  flex-direction: column;
+}
+.section__h {
+  color: white;
+}
+.section__img {
+  width: 100%;
+  height: 100%;
+}
+
+/*FOOTER*/
+
+.footer {
+  display: flex;
+  list-style: none;
+  
+  background-color: yellow;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  
+}
+/* FORMULARIO */
+.fieldset {
+  background-color:mediumorchid;
+  
+}
+
+
+/*MEDIA QUERIES*/
+/*vista telefono movil tablet*/
+
+@media screen and (max-width: 768px) {
+  
+  .body {
+    
+   
+    grid-template-areas: 
+    "nav"
+    "nav"
+    "main"
+    "section"
+    "section"
+    "section"
+    "footer" ;
+    
+    
+  }
+ 
+  
+  .main__color__letra {
+   
+    font-size: 2rem;
+    
+    margin-top: 5px;
+  }
+  .section__prod {
+    
+    grid-template-columns: 1fr;
+    justify-content: unset;
+  }
+  .lista{
+    list-style-position:inside;
+  }
+ 
+  .header__nav__ul {
+    flex-wrap: wrap;
+    display: unset;
+    
+  }
+  .logo {
+    height: 30vh;
+    width: 60vw;
+  }
+  
+}
